@@ -7,10 +7,12 @@ import static org.junit.Assert.assertTrue;
 
 public class FirstSumSubArray {
 
+    // Find a set of numbers in an unsorted array that will add up to a given sum
+    // return the index values of the begin and end of the numbers that add up to given sum
     @Test
     public void shouldFindSumSubArray() {
-        int[] input = new int[] {1, 3, 5, 7, 2};
-        int[] expected = new int[] {2, 4};
+        int[] input = new int[] {1, 2, 3, 5, 7, 2};
+        int[] expected = new int[] {3, 5};
         int[] actual = findSumSubArray(input, 14);
         for(int i = 0; i < actual.length; i++) {
             System.out.println(actual[i]);
@@ -26,9 +28,12 @@ public class FirstSumSubArray {
         while (current < input.length) {
             matchSum = matchSum + input[current];
             if((matchSum - sum) > 0) {
-                matchSum = matchSum - input[last];
-                last++;
-            } else if(matchSum == sum){
+                while((matchSum - sum) > 0) {
+                    matchSum = matchSum - input[last];
+                    last++;
+                }
+            }
+            if(matchSum == sum) {
                 returnArr[0] = last;
                 returnArr[1] = current;
                 return returnArr;
