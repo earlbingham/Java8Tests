@@ -13,7 +13,7 @@ public class MergeTwoArrays {
 System.out.println(arr3[i]);
         }
     }
-    
+
     private static int[] mergeTwo(int[] arr1, int[] arr2) {
         int i = 0; int k = 0;
         List<Integer> ret = new ArrayList<>();
