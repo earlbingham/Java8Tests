@@ -2,7 +2,6 @@ import com.eyelockgames.datastructures.StackDS;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Stack;
 
 import static org.junit.Assert.assertTrue;
 
