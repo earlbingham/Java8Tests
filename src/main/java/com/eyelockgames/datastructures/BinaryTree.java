@@ -48,21 +48,17 @@ public class BinaryTree {
                 if (node.leftChild != null) {
                     nextLevel.push(node.leftChild);
                 }
-
                 if (node.rightChild != null) {
                     nextLevel.push(node.rightChild);
                 }
-            }
-            else {
+            } else {
                 if (node.rightChild != null) {
                     nextLevel.push(node.rightChild);
                 }
-
                 if (node.leftChild != null) {
                     nextLevel.push(node.leftChild);
                 }
             }
-
             if (currentLevel.isEmpty()) {
                 leftToRight = !leftToRight;
                 Stack<Node> temp = currentLevel;
