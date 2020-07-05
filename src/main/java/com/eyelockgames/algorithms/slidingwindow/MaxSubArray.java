@@ -124,17 +124,38 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 //         long[] prices = new long[] {13, 10, 8, 4, 10};
 
 //        System.out.println(solution(prices));
-        System.out.println("roundUp: 3: " + roundUp(3));
-        System.out.println("roundUp: 4: " + roundUp(4));
+        System.out.println("arrangeCoins: 2: " + arrangeCoins2(2));
+        System.out.println("arrangeCoins: 8: " + arrangeCoins2(8));
+        System.out.println("arrangeCoins: 5: " + arrangeCoins2(5));
+        System.out.println("arrangeCoins: 4: " + arrangeCoins2(4));
+        System.out.println("arrangeCoins: 7: " + arrangeCoins2(7));
         // int[] input = new int[]{-2,1,-3,4,-1,2,1,-5,4};
 //        int[] input = new int[]{-2,1};
 //        int result = maxSubArray(input);
 //        System.out.println("result = " + result);
     }
 
-    public static int roundUp(int num) {
-        return (int) Math.ceil((double)num / 2);
+    public static int arrangeCoins(int n) {
+        int rows=1;
+        if(n < 2) return n;
+        if(n == 2) return 1;
+        int m = (int) Math.ceil((double)n / 2);
+        int rem = n - m;
+        while(rem > 1) {
+            rem = rem - (m-- -1);
+            rows++;
+        }
+        if(rem == 1 && m != 1) rows++;
+        return rows;
+    }
 
+    public static int arrangeCoins2(int n) {
+        int k = 0;
+        while(n > 0){
+            k++;
+            n -= k;
+        }
+        return n == 0 ? k : k - 1;
     }
 }
 

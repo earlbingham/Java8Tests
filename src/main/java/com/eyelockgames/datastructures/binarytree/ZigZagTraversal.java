@@ -1,9 +1,9 @@
-package com.eyelockgames.datastructures;
+package com.eyelockgames.datastructures.binarytree;
 
 import java.util.*;
 
 // This Code is contributed by Harikrishnan Rajan.
-public class BinaryTree {
+public class ZigZagTraversal {
 
     // Binary Tree node
     public static class Node  {
@@ -15,7 +15,7 @@ public class BinaryTree {
         }
     }
 
-    Node rootNode;
+    public Node rootNode;
 
     // function to print the
     // zigzag traversal
@@ -66,5 +66,19 @@ public class BinaryTree {
                 nextLevel = temp;
             }
         }
+    }
+    // driver program to test the above function
+    public static void main(String[] args) {
+        ZigZagTraversal tree = new ZigZagTraversal();
+        tree.rootNode = new ZigZagTraversal.Node(1);
+        tree.rootNode.leftChild = new ZigZagTraversal.Node(2);
+        tree.rootNode.rightChild = new ZigZagTraversal.Node(3);
+        tree.rootNode.leftChild.leftChild = new ZigZagTraversal.Node(7);
+        tree.rootNode.leftChild.rightChild = new ZigZagTraversal.Node(6);
+        tree.rootNode.rightChild.leftChild = new ZigZagTraversal.Node(5);
+        tree.rootNode.rightChild.rightChild = new ZigZagTraversal.Node(4);
+
+        System.out.println("ZigZag Order traversal of binary tree is");
+        tree.printZigZagTraversal();
     }
 }
