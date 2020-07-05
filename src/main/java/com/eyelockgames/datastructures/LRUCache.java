@@ -39,6 +39,7 @@ public class LRUCache {
 //            Integer location = queueUsage.get(c.getId());
 //            queue.put(id, usgae-1);
             queue.poll();
+            return c;
         }
 
     }
