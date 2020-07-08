@@ -12,6 +12,7 @@ public class Streams {
         // make them uppercase and print them out.
         myList.stream()
                 .filter(c -> c.startsWith("c"))
+                .map(c -> c.toUpperCase())
                 .forEach(System.out::println);
     }
 }

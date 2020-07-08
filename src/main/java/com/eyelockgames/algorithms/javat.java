@@ -1,37 +1,17 @@
 package com.eyelockgames.algorithms;
-import java.io.*;
-import java.util.*;
 
-import java.io.*;
 import java.util.*;
 public class javat {
 
-
-    /*
-     * To execute Java, please define "static void main" on a class
-     * named Solution.
-     *
-     * If you need more classes, simply define them inline.
-     */
-
-
     /**
-
      a=[9,3,5,7,6];
      b=[8,12,3,5,13]
-
      output=[3,5]
-
-
-
      -------
-
      a=[2,3,4,5]
      o=[60,40,30,24]
      treemap (2, 60) (3, 40) (4, 30), (5, 24)
-
      */
-
 
 //        public static List<Integer> makeProductList(List<Integer> sortA) {
 //            List<Integer> prodL = new ArrayList<Integer>();
@@ -93,24 +73,6 @@ public class javat {
             findMatchesSorted(ar1, ar2).stream().forEach(System.out::println);
         }
 
-
-
-/*
-Your previous Plain Text content is preserved below:
-
-This is just a simple shared plaintext pad, with no execution capabilities.
-
-When you know what language you'd like to use for your interview,
-simply choose it from the dropdown in the top bar.
-
-You can also change the default language your pads are created with
-in your account settings: https://coderpad.io/settings
-
-Enjoy your interview!
-
-test test
-
- */
     /*
      * To execute Java, please define "static void main" on a class
      * named Solution.
@@ -118,12 +80,9 @@ test test
      * If you need more classes, simply define them inline.
      */
 
-
     /**
-
      a=[9,3,5,7,6];
      b=[8,12,3,5,13]
-
      output=[3,5]
      */
 
@@ -147,7 +106,5 @@ test test
             List<Integer> ar2 = new ArrayList<Integer>(b.length);
             for(int i : b) ar2.add(i);
             sortArray(ar1, ar2).stream().forEach(System.out::println);
-
         }
     }
-
