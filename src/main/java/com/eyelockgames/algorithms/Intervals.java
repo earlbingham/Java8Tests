@@ -133,8 +133,6 @@ Output: [[1,7],[8,13],[15,18]]
                         + arr[i].end + "]");
             }
         }
-
-
     }
 }
 
@@ -144,5 +142,3 @@ Given a string you need to check if it is possible to make a palindrome after re
 goolg- true
 hierkih - false
  */
-
-
