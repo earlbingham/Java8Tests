@@ -57,8 +57,108 @@ Output: [[1,7],[8,13],[15,18]]
         return r;
     }
 
+    // Write a Java program to find the common elements between two arrays of integers.
+    // Array1 : [1, 2, 5, 5, 8, 9, 7, 10]
+    // Array2 : [1, 0, 6, 15, 6, 4, 7, 0]
+    // Common element is : 1
+    // Common element is : 7
+    public void findCommonElement(List<Integer> a1, List<Integer> a2) {
+        Set<Integer> a1Set = new HashSet<Integer>();
+        for(Integer i : a1) {
+            a1Set.add(i);
+        }
+        for(Integer j : a2) {
+            if(a1Set.contains(j)) {
+                System.out.println("Common element is : " + j);
+            }
+        }
+    }
+
+    public void findCommonElement2(List<Integer> a1, List<Integer> a2) {
+        Collections.sort(a1);
+        Collections.sort(a2);
+        int i = 0; int j = 0;
+        while (i < a1.size() || j < a2.size()) {
+            if(a1.get(i) == a2.get(j)) {
+                System.out.println("Common element is : " + a1.get(i));
+                if(i+1 == a1.size()) {
+                    break;
+                }
+                if(j+1 == a2.size()) {
+                    break;
+                }
+            } else if(a1.get(i) > a2.get(j)) {
+                if(j+1 == a2.size()) {
+                    break;
+                } else {
+                    j++;
+                }
+            } else if(a1.get(i) < a2.get(j)) {
+                if(i+1 == a1.size()) {
+                    break;
+                } else {
+                    i++;
+                }
+            }
+        }
+    }
+
+    // Convert Character String to Integer without using any inbuilt function
+    //    I/P1 = "12345", O/P1 = 12345 (int)
+    //    I/P2 = "12S45", O/P2 = 1245 (int)
+    //    I/P3 = "12 45", O/P3 = 1245 (int)
+    //    I/P4 = "ABCDS", O/P3 = -1 (int)
+    public Integer convertStringToInteger(String inputString) {
+        Integer returnInteger = 0;
+        boolean isNegative = false;
+        for (int i = 0; i < inputString.length(); i++) {
+            if (inputString.substring(i, i + 1).matches("^/[0-9 -]$")) {
+                if (inputString.charAt(i) == '-') {
+                    isNegative = true;
+                    if (inputString.charAt(i) == ' ') {
+                        continue;
+                    }
+                    int currentNumber = inputString.charAt(i) - '0';
+                    if (returnInteger > 0) {
+                        returnInteger = returnInteger * 10;
+                    }
+                    returnInteger = returnInteger + currentNumber;
+                } else {
+                    return new Integer(-1);
+                }
+            }
+        }
+        if (isNegative) {
+            returnInteger = returnInteger - (2 * returnInteger);
+        }
+        return returnInteger;
+    }
+
+    // Given nums = [2, 7, 11, 15], target = 9.
+    // The output should be [0, 1].
+    // Because nums[0] + nums[1] = 2 + 7 = 9.
+
+    public int[] findTwoSum(int[] nums, int target) {
+        int[] rArr = new int[2];
+        int last = 0; int j = 0; int sum = 0;
+        for(int k = 0; k < nums.length; k++) {
+            if(nums[k] < target) {
+                if(nums[k] + sum == target) {
+                    rArr[0] = last;
+                    rArr[1] = k;
+                    return rArr;
+                } if(nums[k] + sum < target) {
+                    sum = sum - nums[last];
+                    last++;
+                }
+            }
+        }
+        return rArr;
+    }
 
     public static void main(String[] args) {
+        List<Integer> a1 = new ArrayList<Integer>();
+
         Node a = new Node(1, 5);
         Node b = new Node(2, 7);
         List<Node> l = new ArrayList<Node>();
