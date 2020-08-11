@@ -1,8 +1,7 @@
-package com.eyelockgames.javamagazine;
+package com.eyelockgames.javamagazine.optionalDP;
 
 import java.util.Objects;
 import java.util.Optional;
-import java.util.OptionalDouble;
 
 public class OptionalDesignPatterns {
 
