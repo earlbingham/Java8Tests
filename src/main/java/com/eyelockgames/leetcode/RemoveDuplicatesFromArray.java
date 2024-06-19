@@ -26,6 +26,6 @@ public class RemoveDuplicatesFromArray {
     public static void main(String[] args) {
         int[] fourNums = { -100, -100, -100, 0, 0, 0, 100, 100};
         int num = removeDuplicates(fourNums);
-        System.out.println("output: " + Integer.toString(num));
+        System.out.println("results: " + num);
     }
 }
