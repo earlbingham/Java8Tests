@@ -18,6 +18,6 @@ public class LoveLetterMystery {
     public static void main(String[] args) {
         String s = "abcd";
         int num = theLoveLetterMystery(s);
-        System.out.println(s + num);
+        System.out.println(s + Integer.toString(num));
     }
 }
