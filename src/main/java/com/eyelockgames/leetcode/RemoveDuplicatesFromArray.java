@@ -7,25 +7,26 @@ public class RemoveDuplicatesFromArray {
             return nums.length;
         }
         int k = 0;
-        for (int i = 0; i + 1 < nums.length; ) {
-            if (nums[i] != nums[i + 1] && k != i) {
+        int i = 0;
+        while ( i + 1 < nums.length) {
+            if (nums[i] != nums[i + 1]) {
                 k = k + 1;
                 nums[k] = nums[i + 1];
                 i = i + 1;
             }
-            while (nums[i] == nums[i + 1]) {
+            while (i + 1 < nums.length && nums[i] == nums[i + 1]) {
                 i++;
-                if (i + 1 >= nums.length) {
-                    break;
-                }
             }
         }
         return k + 1;
     }
 
     public static void main(String[] args) {
-        int[] fourNums = { -100, -100, -100, 0, 0, 0, 100, 100};
-        int num = removeDuplicates(fourNums);
+        int[] threeNums = { 1, 1, 2 };
+        int num = removeDuplicates(threeNums);
+        System.out.println("results: " + num);
+        int[] threeMoreNums = { -100, 0, 100 };
+        num = removeDuplicates(threeMoreNums);
         System.out.println("results: " + num);
     }
 }
